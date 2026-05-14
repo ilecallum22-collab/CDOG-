@@ -144,24 +144,4 @@ export const pgConfig = {
 
 export default pgConfig;
 
-const { Client, GatewayIntentBits } = require('discord.js');
 
-const client = new Client({
-  intents: [GatewayIntentBits.Guilds],
-});
-
-client.on('interactionCreate', async interaction => {
-  if (!interaction.isChatInputCommand()) return;
-
-  if (interaction.commandName === 'links') {
-    await interaction.reply({
-      content: `🌟 **Social Links**\n
-📺 YouTube: https://youtube.com/@c-dawg-y2m
-🌟 TikTok: https://tiktok.com/@cdog_021
-🐦 Twitter (X): https://twitter.com/IleCallum
-💬 Support Server:https://discord.gg/CK5CKWAWUN `,
-    });
-  }
-});
-
-client.login('YOUR_BOT_TOKEN');
